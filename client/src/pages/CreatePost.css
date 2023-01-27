@@ -1,0 +1,103 @@
+.heading-section {
+    margin-left: 10px;
+}
+
+.community-heading {
+    font-weight: 700;
+}
+
+.info-msg {
+    margin-top: 10px;
+}
+
+.create-post-section {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.generated-image {
+    border-radius: 6px;
+    margin-top: 15px;
+    margin-left: 20px;
+    position: relative;
+    width: fit-content;
+}
+
+
+.form-field {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.create-button {
+    margin-left: 23px;
+    cursor: pointer;
+    color:aliceblue;
+    background-color:darkmagenta;
+    font-size: 130%;
+    font-weight: 700;
+    padding: 6px;
+}
+
+.ai-image {
+    border-radius: 6px;
+    width: 200px;
+    height: 200px;
+}
+
+.spinner {
+    color: darkgrey;
+    position: absolute;
+    left: 43%;
+    top: 40%;
+}
+
+.share-button {
+    margin: 25px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: lawngreen;
+    border-radius: 5px;
+    font-size: 130%;
+    font-weight: 700;
+}
+
+.download-icon {
+    opacity: 30%;
+    bottom: 10px;
+    right: 8px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+@media (min-width:350px) {
+    .ai-image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media (min-width:580px) {
+    .ai-image {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (min-width:860px) {
+    .ai-image {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+@media (min-width:1023px) {
+    .ai-image {
+        width: 400px;
+        height: 400px;
+    }
+}

@@ -1,0 +1,28 @@
+.input-field{
+    height: 50px;
+    margin-left: 20px;
+    text-indent: 7px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+@media (min-width:350px) {
+    .input-field{
+    width: 300px;
+    }
+}
+@media (min-width:580px) {
+    .input-field{
+    width: 350px;
+    }
+}
+@media (min-width:750px) {
+    .input-field{
+    width: 450px;
+    }
+}
+
+.after-gen{
+    opacity: 40%;
+    color: dimgray;
+}

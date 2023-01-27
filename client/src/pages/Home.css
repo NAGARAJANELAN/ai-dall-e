@@ -1,0 +1,81 @@
+/* .home-page{
+    margin-top: 8px;
+    margin-left: 8px;
+} */
+.community-heading{
+    font-weight: 700;
+    margin-left: 8px;
+}
+.info-msg{
+    margin-left: 16px;
+}
+.input-field{
+    width: 180px;
+    height: 50px;
+}
+
+.post-section{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+@media (min-width:350px) {
+    .post-section{
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+    row-gap: 20px;
+    }
+    .input-field{
+        width: 180px;
+        height: 50px;
+    }
+}
+
+@media (min-width:580px) {
+    .post-section{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 16px;
+    row-gap: 23px;
+    }
+    .input-field{
+        width: 250px;
+        height: 60px;
+    }
+}
+
+
+@media (min-width:860px) {
+    .post-section{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 10px;
+    row-gap: 25px;
+    }
+}
+
+@media (min-width:1023px) {
+    .post-section{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 16px;
+        row-gap: 30px;
+    }
+}
+
+
+
+
+
+.info-msg{
+    margin-top: 10px;
+}
+
+.form-field{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.image-section{
+    display: flex;
+    flex-direction: column;
+    columns: 2;
+}

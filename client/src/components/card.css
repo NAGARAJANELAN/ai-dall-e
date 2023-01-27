@@ -1,0 +1,93 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.download-icon{
+    opacity: 30%;
+    width: 45px;
+    border-radius: 50%;
+    align-self: center;
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+.post-info{
+    background-color:black;
+    opacity: 60%;
+    padding: 8px;
+    border-radius: 8px;
+    height: 65px;
+    color: antiquewhite;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+
+.post-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 8px;
+}
+
+@media (min-width:350px) {
+    .post-image{
+        width: 300px;
+        height: 300px;
+    }
+    .post-info{
+        width: 300px;
+    }
+}
+@media (min-width:580px) {
+    .post-image{
+        width: 275px;
+        height: 275px;
+    }
+    .post-info{
+        width: 275px;
+    }
+}
+@media (min-width:860px) {
+    .post-image{
+        width: 285px;
+        height: 285px;
+    }
+    .post-info{
+        width: 285px;
+    }
+}
+
+@media (min-width:1023px) {
+    .post-image{
+        width: 320px;
+        height: 320px;
+    }
+    .post-info{
+        width: 320px;
+    }
+} 
+
+.post-card{
+    position: relative;
+}
+
+.post-info{
+    position: absolute;
+    bottom: 6px;
+}
+
+.post-creator{
+    font-weight: 800;
+    font-size: 120%;
+}
+
+.post-card .post-info{
+    visibility: hidden;
+}
+
+.post-card:hover .post-info{
+    /* display: block; */
+    visibility: visible;
+}
+
