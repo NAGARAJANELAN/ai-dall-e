@@ -23,6 +23,11 @@ const CreatePost = () => {
       return;
     }
 
+    if(!postQuery.photo){
+      alert("Create something to share");
+      return;
+    }
+    
     console.log("to commu...");
     setLoading(true);
     if (postQuery.photo && postQuery.prompt) {
@@ -38,7 +43,7 @@ const CreatePost = () => {
         navigate("/");
         console.log("sicc")
       } catch (error) {
-        console.log(error);
+//         console.log(error);
       } finally {
         setLoading(false);
       }
@@ -68,9 +73,9 @@ const CreatePost = () => {
         ...postQuery,
         photo: `data:image/jpeg;base64,${data.photo}`,
       });
-      console.log(postQuery);
+//       console.log(postQuery);
     } catch (error) {
-      alert(error.message);
+//       alert(error.message);
     } finally {
       setLoading(false);
     }
