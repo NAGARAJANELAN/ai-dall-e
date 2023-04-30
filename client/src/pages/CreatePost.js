@@ -12,7 +12,9 @@ const CreatePost = () => {
   const [postQuery, setPostQuery] = React.useState({
     name: "",
     prompt: "",
-    photo: "",
+    photo:"",
+    photo1: "",
+    photo2: "",
   });
 
   const [loading, setLoading] = React.useState(false);
@@ -23,21 +25,21 @@ const CreatePost = () => {
       return;
     }
 
-    if(!postQuery.photo){
+    if(!postQuery.photo1){
       alert("Create something to share");
       return;
     }
     
     console.log("to commu...");
     setLoading(true);
-    if (postQuery.photo && postQuery.prompt) {
+    if (postQuery.photo1 && postQuery.prompt) {
       try {
         const response = await fetch("https://nax-ai-dall-e.onrender.com/api/v1/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(postQuery),
+          body: JSON.stringify({...postQuery,photo:photo1}),
         });
         await response.json();
         navigate("/");
@@ -71,7 +73,8 @@ const CreatePost = () => {
 
       setPostQuery({
         ...postQuery,
-        photo: `data:image/jpeg;base64,${data.photo}`,
+        photo1: `data:image/jpeg;base64,${data.photo[0]}`,
+        photo2: `data:image/jpeg;base64,${data.photo[1]}`,
       });
 //       console.log(postQuery);
     } catch (error) {
@@ -107,10 +110,10 @@ const CreatePost = () => {
       </div>
 
       <div className="generated-image">
-        {postQuery.photo ? (
+        {postQuery.photo1 ? (
           <img
             className="ai-image"
-            src={postQuery.photo}
+            src={postQuery.photo1}
             alt={""}
           />
         ) : (
@@ -135,9 +138,43 @@ const CreatePost = () => {
           onClick={() => downloadImage(postQuery.prompt, postQuery.photo)}
           className="download-button"
         > */}
-          {postQuery.photo && <img src={download} onClick={() => downloadImage(postQuery.prompt, postQuery.photo)} alt="download" className="download-icon" />}
+          {postQuery.photo1 && <img src={download} onClick={() => downloadImage(postQuery.prompt, postQuery.photo1)} alt="download" className="download-icon" />}
         {/* </button> */}
       </div>
+
+      <div className="generated-image">
+        {postQuery.photo2 ? (
+          <img
+            className="ai-image"
+            src={postQuery.photo2}
+            alt={""}
+          />
+        ) : (
+          <img
+            className="ai-image"
+            src={preview}
+            alt={""}
+          />
+        )}
+        {loading && (
+          <ReactLoading
+            className="spinner"
+            type="spin"
+            color="#A9A9A9"
+            height={50}
+            width={50}
+          />
+        )}
+
+        {/* <button
+          type="button"
+          onClick={() => downloadImage(postQuery.prompt, postQuery.photo)}
+          className="download-button"
+        > */}
+          {postQuery.photo2 && <img src={download} onClick={() => downloadImage(postQuery.prompt, postQuery.photo2)} alt="download" className="download-icon" />}
+        {/* </button> */}
+      </div>
+
       <button className="create-button" onClick={handleClick}>
           {loading ? "Generating..." : "Generate"}
         </button>
