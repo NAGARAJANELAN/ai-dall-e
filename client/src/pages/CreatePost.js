@@ -66,7 +66,7 @@ const CreatePost = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt: postQuery.prompt }),
+        body: JSON.stringify(prompt),
       });
 
       const data = await imageResponse.json();
