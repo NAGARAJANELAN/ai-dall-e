@@ -39,7 +39,7 @@ const CreatePost = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({...postQuery,photo:photo1}),
+          body: JSON.stringify({...postQuery,photo:postQuery.photo1}),
         });
         await response.json();
         navigate("/");
